@@ -1,0 +1,10 @@
+ 
+SELECT
+  COUNT(DISTINCT CASE
+    WHEN number_of_pairs = '5 pairs' THEN user_id
+    
+    END) AS '5 pair home try',
+     COUNT(DISTINCT CASE
+    WHEN number_of_pairs = '3 pairs' THEN user_id
+    END) AS '3 pair home try'
+FROM home_try_on;
