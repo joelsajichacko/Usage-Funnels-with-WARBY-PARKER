@@ -1,0 +1,17 @@
+WITH q AS(
+   SELECT '1-quiz' AS stage ,COUNT(DISTINCT user_id)
+FROM quiz
+),
+h AS (
+  SELECT '2-home try on' AS satge,COUNT(DISTINCT user_id)
+  FROM home_try_on
+),
+p AS (
+  SELECT '3-purchase' AS satge,COUNT(DISTINCT user_id)
+  FROM purchase
+)
+SELECT * FROM q
+UNION ALL 
+SELECT * FROM h
+UNION ALL
+SELECT * FROM p;
