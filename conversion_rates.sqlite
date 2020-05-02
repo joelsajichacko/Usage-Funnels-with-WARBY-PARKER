@@ -1,0 +1,15 @@
+WITH funnels AS(SELECT DISTINCT q.user_id,
+   h.user_id IS NOT NULL AS 'is_home_try_on',
+   h.number_of_pairs,
+   p.user_id IS NOT NULL AS 'is_purchase'
+FROM quiz AS 'q'
+LEFT JOIN home_try_on AS 'h' 
+   ON q.user_id = h.user_id
+LEFT JOIN purchase AS 'p'
+   ON p.user_id = q.user_id)
+SELECT COUNT(*),
+SUM(is_home_try_on) AS 'num_home_try',
+SUM(is_purchase) AS 'num_purchase',
+ 1.0 * SUM(is_home_try_on) / COUNT(user_id) AS 'quiz_to_home_try_on',
+   1.0 * SUM(is_purchase) / SUM(is_home_try_on) AS 'home_try_to_purchase'
+ FROM funnels;
