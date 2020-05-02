@@ -13,3 +13,5 @@ Home Try-On Funnel:
 quiz
 home_try_on
 purchase
+
+This project was a collaboration with Warby Parker’s Data Science team (thank you!) and uses fictional data.
