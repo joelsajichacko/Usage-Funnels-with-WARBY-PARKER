@@ -1,0 +1,11 @@
+SELECT *
+FROM quiz
+LIMIT 5;
+ 
+SELECT *
+FROM home_try_on
+LIMIT 5;
+ 
+SELECT *
+FROM purchase
+LIMIT 5;
