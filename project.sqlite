@@ -1,4 +1,4 @@
  SELECT * FROM survey
  LIMIT 10;
  
- -- limit is given in order to gain  a quick query
+ -- limit is given in order to gain  a quick query, description of code ,see commit description
